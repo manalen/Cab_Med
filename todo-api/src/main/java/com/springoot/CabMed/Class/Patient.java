@@ -2,16 +2,14 @@ package com.springoot.CabMed.Class;
 
 public class Patient {
 
-
-
         private int id ;
-        private String title ;
-        private  int prix ;
+        private String cin;
+       
 
-        public Patient(int id, String title, int prix) {
+        public Patient(int id, String title) {
             this.id = id;
-            this.title = title;
-            this.prix = prix;
+            this.cin= title;
+           
         }
 
         public void setId(int id) {
@@ -23,20 +21,16 @@ public class Patient {
         }
 
         public String getTitle() {
-            return title;
+            return cin;
         }
 
-        public int getPrix() {
-            return prix;
-        }
+       
 
         public void setTitle(String title) {
-            this.title = title;
+            this.cin= title;
         }
 
-        public void setPrix(int prix) {
-            this.prix = prix;
-        }
+       
     }
 
 
