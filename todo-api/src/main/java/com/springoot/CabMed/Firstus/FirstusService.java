@@ -1,26 +1,63 @@
 package com.springoot.CabMed.Firstus;
 
 
+import com.springoot.CabMed.Connection.Medecindb;
+import com.springoot.CabMed.Connection.Patientdb;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.springoot.CabMed.Class.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Service
 public class FirstusService {
-    private List<Patient> data =  Arrays.asList(
-
-            new Patient(1,"oth",50),
-            new Patient(2,"oth",50),
-            new Patient(3,"oth",50)
-
-
-
-    );
+    @Autowired
+    private Patientdb patientdb;
+    @Autowired
+    private Medecindb medecindb;
 
     public List<Patient> findall() {
-        return data;
+        return patientdb.findAll();
 
+    }
+
+    public Patient getbyid(int i) {
+        return patientdb.findById(i).get();
+
+
+    }
+
+  /*  public List<Patient> findbyname(String nom, String prenom) {
+        return patientdb.
+
+    }*/
+
+   /* public List<Patient> finfbycin(String carte) {
+        List<Patient> liste = new ArrayList<Patient>();
+        for (Patient k : data) {
+            if (k.getCin() == carte) {
+                liste.add(k);
+            }
+
+        }
+        return liste;
+    }*/
+
+    /* public boolean save(Patient e) {
+         return patientdb.insert(e)==null? true : false;
+
+      }
+     /* public void delete(int k ){
+          patientdb.deleteById(k);
+      }*/
+    public Medecin returnmedcin(int id) {
+        return medecindb.findById(id).get();
+
+    }
+
+    public boolean savemedecin(Medecin e) {
+      return medecindb.insert(e)==null ? true : false ;
     }
 }
