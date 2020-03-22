@@ -48,7 +48,7 @@ public class FirstusService {
     /* public boolean save(Patient e) {
          return patientdb.insert(e)==null? true : false;
 
-      }
+      }*/
      /* public void delete(int k ){
           patientdb.deleteById(k);
       }*/

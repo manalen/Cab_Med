@@ -44,7 +44,7 @@ public class FirstusControl {
 
     //    }
 
-   /*@PostMapping(value = {"/CreerPatient"})
+   @PostMapping(value = {"/CreerPatient"})
     public Patient createPatient(@RequestBody Patient o) {
         if (ResultService.save(o)) {
             return o;
@@ -53,7 +53,7 @@ public class FirstusControl {
         }
 
 
-    }*/
+    }
 
    @GetMapping(value={"/{id_med"})
     public Medecin affichermedecin(@PathVariable int  id_med){

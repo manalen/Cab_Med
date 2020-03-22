@@ -12,6 +12,7 @@ public class Consultation {
     private int id_medecinn;
     private long date;
     private String observation ;
+    private Analyse analyse ;
 
     public int getId_consultation() {
         return id_consultation;
@@ -51,12 +52,13 @@ public class Consultation {
 
 
 
-    public Consultation(int id_consultation, int id_patient, int id_medecinn, long date, String observation) {
+    public Consultation(int id_consultation, int id_patient, int id_medecinn, long date, String observation, Analyse a) {
         this.id_consultation = id_consultation;
         this.id_patient = id_patient;
         this.id_medecinn = id_medecinn;
         this.date = System.currentTimeMillis();
         this.observation = observation;
+        this.analyse= a ;
 
     }
 
@@ -67,5 +69,13 @@ public class Consultation {
 
     public void setObservation(String observation) {
         this.observation = observation;
+    }
+
+    public Analyse getAnalyse() {
+        return analyse;
+    }
+
+    public void setAnalyse(Analyse analyse) {
+        this.analyse = analyse;
     }
 }
